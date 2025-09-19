@@ -1,0 +1,49 @@
+.firstSection {
+    display: flex;
+    justify-content: center;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.firstSectionLogo {
+  width: 100%;
+  height: 600px;
+  display: block;
+}
+
+.textContent {
+  position: absolute; 
+  top: 50%;           
+  left: 50%;          
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.buttonMenu {
+    background-color: #338220;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    font-size: 18px;
+}
+
+.buttonMenu:hover {
+    cursor: pointer;
+    background-color: #1b6d06;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+p {
+    font-size: 20px;
+}
+
