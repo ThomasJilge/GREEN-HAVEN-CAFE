@@ -1,0 +1,43 @@
+.aboutUs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2 {
+    color: #1F522B;
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+.textContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.textAboutUs {
+    max-width: 800px;
+}
+
+.imageContainer {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.aboutUsLogo {
+    height: 450px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.aboutUsLogo:hover {
+    transform: scale(1.01);
+    filter: brightness(1.2);
+}
+
+.googleMapsContainer {
+    margin-top: 50px;
+}
