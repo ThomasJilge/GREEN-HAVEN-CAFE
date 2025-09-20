@@ -40,4 +40,32 @@ h2 {
 
 .googleMapsContainer {
     margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.locationContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.address {
+    margin-top: 0;
+}
+
+.address, .openingHours {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.addressText, .openingHoursText {
+    margin: 0;
+}
+
+.openingHoursContainer {
+    margin-top: 15px;
 }
