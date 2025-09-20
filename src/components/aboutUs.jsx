@@ -4,7 +4,7 @@ import aboutUsImageThree from '../assets/aboutUsThree.png'
 import aboutUsImageFour from '../assets/aboutUsFour.png'
 import './aboutUs.css'
 
-export default function Header() {
+export default function AboutUs() {
   return (
     <section className='aboutUs'>
         <div className='textContainer'>
@@ -31,7 +31,7 @@ export default function Header() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
             />
-        <div className='locationContaier'>
+        <div className='locationContainer'>
             <div className='addressContainer'>
                 <p className='address'>Address:</p>
                 <p className='addressText'>Bangkok 10600</p>

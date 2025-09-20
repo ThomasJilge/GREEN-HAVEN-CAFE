@@ -34,6 +34,7 @@ h2 {
 }
 
 .aboutUsLogo:hover {
+    cursor: pointer;
     transform: scale(1.01);
     filter: brightness(1.2);
 }
