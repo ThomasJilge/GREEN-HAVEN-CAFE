@@ -9,7 +9,7 @@ export default function FirstSection() {
         <div className="textContent">
             <h1>WELCOME TO<br /> GREEN HAVEN CAFE</h1>
             <p>Your cozy urban retread in the heart of Bangkok</p>
-            <button className='buttonMenu'>View our menu</button>
+            <button className='buttonMenu' onClick={()=> {document.getElementById('menu').scrollIntoView({ behavior: 'smooth' })}}>View our menu</button>
         </div>
     </div>
     </section>
