@@ -6,7 +6,7 @@ import './aboutUs.css'
 
 export default function AboutUs() {
   return (
-    <section className='aboutUs'>
+    <section className='aboutUs' id='aboutUs'>
         <div className='textContainer'>
             <div className='aboutUsHeader'>
                 <h2>About Us</h2>

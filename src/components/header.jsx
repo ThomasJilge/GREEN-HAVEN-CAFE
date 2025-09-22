@@ -8,7 +8,7 @@ export default function Header() {
             <img className='headerLogo' src={headerLogo} alt="Logo" />
         <nav className="navbarHeader">
             <a href="#home" className="navbarLink">Home</a>
-            <a href="#menu" className="navbarLink">Menu</a>
+            <a href="#aboutUs" className="navbarLink">About us</a>
             <a href="#contact" className="navbarLink">Contact</a>
         </nav>
       </div>
