@@ -1,0 +1,46 @@
+.footer {
+    height: 150px;
+    background-color: #1F522B;
+}
+
+.footerContainer {
+    /* max-width: 1440px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 0 24px;
+}
+
+.copyRightContainer {
+    color: white;
+}
+
+.copyRightContainer p {
+    margin: 0;
+}
+
+.icons8Container {
+    display: flex;
+    justify-content: center;
+}
+
+.iconContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.footerLogo {
+    width: 250px;
+    height: 150px;
+}
+
+.footerIcon {
+    width: 35px;
+    height: 35px;
+}
+
+.footerIcon:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
