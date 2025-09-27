@@ -12,8 +12,15 @@ export default function AboutUs() {
                 <h2>About Us</h2>
             </div>
             <div className='textAboutUs'>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus reprehenderit facere perferendis omnis in error, obcaecati perspiciatis similique modi facilis tenetur illo, quasi, commodi labore laudantium voluptate quis suscipit soluta!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus reprehenderit facere perferendis omnis in error, obcaecati perspiciatis similique modi facilis tenetur illo, quasi, commodi labore laudantium voluptate quis suscipit soluta!</p>
+                <p>
+                    <span className='highlight'>Welcome</span> to the heart of <span className='highlight'>Thonburi</span> - where <span className='highlight'>tradition</span> meets <span className='highlight'>urban rhythm</span>. Our café is more than just a place for <span className='highlight'>good coffee</span>. It is a retreat for anyone who wants to not only experience Bangkok, but feel it.
+                </p>
+                <p>
+                    We love the <span className='highlight'>diversity</span> of this city: the <span className='highlight'>golden temples</span>, the <span className='highlight'>vibrant street markets</span>, the <span className='highlight'>quiet moments</span> by the river. It is precisely this energy that flows into our drinks, our interior design, and our hospitality. Whether you stop by for a quick espresso or <span className='highlight'>spend hours</span> working over a cold brew, you are always welcome here.
+                </p>
+                <p>
+                    Our <span className='highlight'>ingredients</span> are carefully selected, our recipes <span className='highlight'>refined with love</span>. And our <span className='highlight'>team</span>? It consists of people who <span className='highlight'>love Bangkok</span> just as much as you do. Come by, <span className='highlight'>feel the warmth</span>, taste the city - and feel free to stay a little longer.
+                </p>
             </div>
         </div>
         <div className='imageContainer'>

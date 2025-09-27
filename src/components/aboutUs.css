@@ -8,6 +8,7 @@ h2 {
     color: #1F522B;
     font-size: 40px;
     margin-bottom: 0;
+    text-decoration: underline;
 }
 
 .textContainer {
@@ -19,6 +20,11 @@ h2 {
 
 .textAboutUs {
     max-width: 800px;
+}
+
+.highlight {
+    color: #1F522B;
+    font-weight: bold;
 }
 
 .imageContainer {
