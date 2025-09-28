@@ -8,7 +8,9 @@ export default function Footer() {
   return (
     <footer className="footer">
         <div className='footerContainer'>
-            <img className='footerLogo' src={footerLogo} alt="Logo" />
+            <a href="#header">
+                <img className='footerLogo' src={footerLogo} alt="Logo" />
+            </a>
         <div className='copyRightContainer'>
             <p>© Thomas Jilge 2025</p>
             <p className='icons8Container'>Icons by icons8</p>

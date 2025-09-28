@@ -28,7 +28,7 @@ export default function AboutUs() {
             <img className="aboutUsLogo" src={aboutUsImageFour} alt="" />
             <img className="aboutUsLogo" src={aboutUsImageThree} alt="" />
         </div>
-        <div className='googleMapsContainer'>
+        <div className='googleMapsContainer' id='location'>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29796.737560132588!2d100.46242430034351!3d13.718547596849811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2985f39205789%3A0x30100b25de24e70!2sThonburi%2C%20Bangkok%2010600%2C%20Thailand!5e1!3m2!1sde!2sde!4v1758363396366!5m2!1sde!2sde"
                 width="600"

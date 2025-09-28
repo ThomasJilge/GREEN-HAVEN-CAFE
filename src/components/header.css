@@ -17,7 +17,7 @@
 }
 
 .navbarHeader {
-    width: 300px;
+    width: auto;
     gap: 50px;
     display: flex;
     justify-content: center;
@@ -32,4 +32,11 @@
 .navbarLink:hover {
     cursor: pointer;
     text-decoration: underline;
+}
+
+.openCloseContainer {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
 }
