@@ -12,7 +12,7 @@ export default function OpenStatus() {
 
     const hour = parseInt(bangkokTime);
     const openHour = 7;
-    const closeHour = 18;
+    const closeHour = 17;
 
     setIsOpen(hour >= openHour && hour < closeHour);
   }, []);

@@ -3,6 +3,8 @@ import aboutUsImageTwo from '../assets/aboutUsTwo.png'
 import aboutUsImageThree from '../assets/aboutUsThree.png'
 import aboutUsImageFour from '../assets/aboutUsFour.png'
 import './aboutUs.css'
+import OpenStatus from './openStatus';
+import './openStatus.css'
 
 export default function AboutUs() {
   return (
@@ -48,6 +50,7 @@ export default function AboutUs() {
             <div className='openingHoursContainer'>
                 <p className='openingHours'>Opening hours:</p>
                 <p className='openingHoursText'>Everyday: 7 a.m. - 6 p.m.</p>
+                <OpenStatus />
             </div>
         </div>
         </div>
