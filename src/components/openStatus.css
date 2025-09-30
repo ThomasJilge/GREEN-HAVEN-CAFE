@@ -19,3 +19,9 @@
 .closed {
   background-color: #c62b2b; 
 }
+
+.statusIcon {
+  width: 20px;
+  height: 20px;
+  padding-right: 5px;
+}
