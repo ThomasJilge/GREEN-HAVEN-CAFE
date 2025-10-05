@@ -16,13 +16,13 @@ import { useState } from 'react';
 export default function AboutUs() {
 
   const images = [
+    aboutUsImageThree,
+    aboutUsImageSeven,
+    aboutUsImageSix,
+    aboutUsImageFour,
     aboutUsImageOne,
     aboutUsImageTwo,
-    aboutUsImageThree,
-    aboutUsImageFour,
-    aboutUsImageFive,
-    aboutUsImageSix,
-    aboutUsImageSeven
+    aboutUsImageFive
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
