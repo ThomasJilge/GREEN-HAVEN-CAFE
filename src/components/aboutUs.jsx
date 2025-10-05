@@ -2,11 +2,42 @@ import aboutUsImageOne from '../assets/aboutUsOne.png'
 import aboutUsImageTwo from '../assets/aboutUsTwo.png'
 import aboutUsImageThree from '../assets/aboutUsThree.png'
 import aboutUsImageFour from '../assets/aboutUsFour.png'
+import aboutUsImageFive from '../assets/aboutUsFive.png'
+import aboutUsImageSix from '../assets/aboutUsSix.png'
+import aboutUsImageSeven from '../assets/aboutUsSeven.png'
+import arrowLeftImage from '../assets/arrowLeft.png'
+import arrowRightImage from '../assets/arrowRight.png'
 import './aboutUs.css'
 import OpenStatus from './openStatus';
 import './openStatus.css'
+import { useState } from 'react';
+
 
 export default function AboutUs() {
+
+  const images = [
+    aboutUsImageOne,
+    aboutUsImageTwo,
+    aboutUsImageThree,
+    aboutUsImageFour,
+    aboutUsImageFive,
+    aboutUsImageSix,
+    aboutUsImageSeven
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const nextIndex1 = (currentIndex + 1) % images.length;
+  const nextIndex2 = (currentIndex + 2) % images.length;
+
   return (
     <section className='aboutUs' id='aboutUs'>
         <div className='textContainer'>
@@ -25,11 +56,41 @@ export default function AboutUs() {
                 </p>
             </div>
         </div>
-        <div className='imageContainer'>
-            <img className="aboutUsLogo" src={aboutUsImageOne} alt="" />
-            <img className="aboutUsLogo" src={aboutUsImageFour} alt="" />
-            <img className="aboutUsLogo" src={aboutUsImageThree} alt="" />
+
+      <div className="imageSliderContainer">
+        <img
+          src={arrowLeftImage}
+          alt="Previous"
+          onClick={prevImage}
+          className="arrow"
+        />
+
+        <div className="sliderImages">
+          <img
+            className="aboutUsLogo"
+            src={images[currentIndex]}
+            alt={`About us ${currentIndex + 1}`}
+          />
+          <img
+            className="aboutUsLogo"
+            src={images[(currentIndex + 1) % images.length]}
+            alt={`About us ${(currentIndex + 1) % images.length + 1}`}
+          />
+          <img
+            className="aboutUsLogo"
+            src={images[(currentIndex + 2) % images.length]}
+            alt={`About us ${(currentIndex + 2) % images.length + 1}`}
+          />
         </div>
+
+        <img
+          src={arrowRightImage}
+          alt="Next"
+          onClick={nextImage}
+          className="arrow"
+        />
+      </div>
+
         <div className='googleMapsContainer' id='location'>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29796.737560132588!2d100.46242430034351!3d13.718547596849811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2985f39205789%3A0x30100b25de24e70!2sThonburi%2C%20Bangkok%2010600%2C%20Thailand!5e1!3m2!1sde!2sde!4v1758363396366!5m2!1sde!2sde"

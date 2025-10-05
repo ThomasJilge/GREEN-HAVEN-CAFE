@@ -21,16 +21,15 @@ export default function OpenStatus() {
   }, []);
 
   return (
-  <div className={`openStatus ${isOpen ? 'open' : 'closed'}`}>
-    <img
-      src={isOpen ? coffeeCup : moonIcon}
-      alt={isOpen ? 'Coffee cup' : 'Moon'}
-      className="statusIcon"
-    />
-    {isOpen
-      ? 'open today: 7 a.m. - 6 p.m.'
-      : 'closed: open tomorrow from 7 a.m.'}
-  </div>
-
+    <div className={`openStatus ${isOpen ? 'open' : 'closed'}`}>
+      <img
+        src={isOpen ? coffeeCup : moonIcon}
+        alt={isOpen ? 'Coffee cup' : 'Moon'}
+        className="statusIcon"
+      />
+      {isOpen
+        ? 'open today: 7 a.m. - 6 p.m.'
+        : 'closed: open tomorrow from 7 a.m.'}
+    </div>
   );
 }
