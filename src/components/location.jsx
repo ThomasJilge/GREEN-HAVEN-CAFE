@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 
 export default function Location() {
-
   return (
     <section className='aboutUs' id='aboutUs'>
 
