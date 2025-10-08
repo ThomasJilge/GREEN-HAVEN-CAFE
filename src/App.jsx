@@ -1,6 +1,7 @@
 import Header from './components/header.jsx'
 import FirstSection from './components/firstSection.jsx'
 import AboutUs from './components/aboutUs.jsx'
+import Location from './components/location.jsx'
 import Menu from './components/menu.jsx'
 import ContactForm from './components/contactForm.jsx'
 import Footer from './components/footer.jsx'
@@ -11,6 +12,7 @@ export default function App() {
     <><Header />
     <FirstSection />
     <AboutUs />
+    <Location />
     <Menu />
     <ContactForm />
     <Footer /></>

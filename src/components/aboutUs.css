@@ -33,21 +33,6 @@ h2 {
     justify-content: center;
 }
 
-.googleMapsContainer {
-    margin-top: 50px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-}
-
-.locationContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
 .address {
     margin-top: 0;
 }
