@@ -13,7 +13,7 @@
 }
 
 .bookingContainer {
-    width: 400px;
+    width: 600px;
     height: 550px;
     position: absolute;
     /* justify-content: center; */
@@ -22,17 +22,17 @@
     flex-direction: column;
     background-color: #FDF6E3;
     opacity: 0.85;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .bookingFormHeaderContainer {
-    background-color: #F7D8B3;
+    background-color: #e6b47a;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .bookingFormHeadline {
@@ -51,13 +51,40 @@
     height: 600px;
 }
 
+.bookingFormMainContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.bookingFormContainerOne, .bookingFormContainerTwo {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  gap: 20px;
+}
+
 .bookingForm {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    width: 50%;
+    justify-content: center;
+    width: 80%;
     margin-top: 10px;
+}
+
+.bookingFormRow {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+}
+
+.messageContainer {
+  width: 80%;
 }
 
 input, textarea {
@@ -73,7 +100,13 @@ input, textarea {
 }
 
 textarea {
-    height: 50px;
+    height: 35px;
+    padding: 0;
+    resize: none;
+}
+
+textarea::placeholder {
+  font-weight: 500;
 }
 
 input:hover,
@@ -102,7 +135,7 @@ textarea:hover::placeholder {
     color: white;
     width: 200px;
     height: 50px;
-    border-radius: 25px;
+    border-radius: 10px;
     border: none;
     font-size: 18px;
     margin-top: 30px;
