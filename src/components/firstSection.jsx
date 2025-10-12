@@ -1,4 +1,5 @@
 import firstSectionLogo from '../assets/firstSection.png'
+import rotateLogo from '../assets/rotateImage.png'
 import './firstSection.css'
 
 export default function FirstSection() {
