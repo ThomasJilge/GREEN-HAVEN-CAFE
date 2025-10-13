@@ -130,20 +130,24 @@ textarea:hover::placeholder {
   transition: color 0.3s ease;
 }
 
-.buttonContactForm {
-    background-color: #338220;
+.button {
+    background: linear-gradient(135deg, #338220, #1F522B);
     color: white;
     width: 200px;
     height: 50px;
-    border-radius: 10px;
+    border-radius: 12px;
     border: none;
     font-size: 18px;
-    margin-top: 30px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
 }
 
-.buttonContactForm:hover {
+.button:hover {
     cursor: pointer;
-    background-color: #1F522B;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
+    background: linear-gradient(135deg, #1F522B, #338220);
 }
 
 .bookingSelect {

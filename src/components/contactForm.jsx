@@ -13,7 +13,7 @@ export default function ContactForm() {
                         <input className='' type="text" placeholder='Name' />
                         <input className='' type="text" placeholder='Email'/>
                         <textarea className='' name="" id="" placeholder='Message'></textarea>
-                        <button className='buttonContactForm'>Send</button>
+                        <button className='button'>SEND</button>
                     </form>
             </div>
         </div>

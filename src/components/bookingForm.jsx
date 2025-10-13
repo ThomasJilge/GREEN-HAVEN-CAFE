@@ -43,7 +43,7 @@ export default function BookingForm() {
              <div className='messageContainer'>
                   <textarea placeholder='Anything we should know?' />
             </div>
-            <button className='buttonContactForm'>BOOK NOW</button>
+            <button className='button'>BOOK NOW</button>
           </form>
           </div>
         </div>
