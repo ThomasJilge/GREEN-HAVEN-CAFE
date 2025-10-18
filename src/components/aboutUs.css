@@ -43,15 +43,11 @@ h2 {
 }
 
 .addressText, .openingHoursText {
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 .openingHoursContainer {
     margin-top: 15px;
-}
-
-.openStatus {
-    margin-top: 10px;
 }
 
 .imageSliderContainer {

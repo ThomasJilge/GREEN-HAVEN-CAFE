@@ -17,9 +17,9 @@ export default function Header() {
             <a href="#location" className="navbarLink">Location</a>
             <a href="#contactForm" className="navbarLink">Contact</a>
         </nav>
-        <div className='openCloseContainer'>
-          <OpenStatus />
         </div>
+                <div className='openCloseContainer'>
+          <OpenStatus />
         </div>
       </div>
     </section>
