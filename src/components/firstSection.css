@@ -17,14 +17,14 @@
 
 .textContent {
   position: absolute; 
-  top: 50%;           
-  left: 50%;          
-  transform: translate(-50%, -50%);
+  /* top: 50%;           
+  left: 50%;           */
+  /* transform: translate(-50%, -50%); */
   color: white;
   text-align: center;
-  opacity: 0;
+  /* opacity: 0;
   animation: slideUpFade 1.4s ease-out forwards;
-  animation-delay: 0.3s;
+  animation-delay: 0.3s; */
 }
 
 .button {
@@ -55,7 +55,7 @@ p {
     font-size: 20px;
 }
 
-@keyframes slideUpFade {
+/* @keyframes slideUpFade {
   0% {
     transform: translate(-50%, 20%);
     opacity: 0;
@@ -64,7 +64,7 @@ p {
     transform: translate(-50%, -50%);
     opacity: 1;
   }
-}
+} */
 
 
 
