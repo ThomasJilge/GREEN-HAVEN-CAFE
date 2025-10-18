@@ -1,12 +1,7 @@
 import firstSectionLogo from '../assets/firstSection.png'
-import rotateLogo from '../assets/rotateImage.png'
 import './firstSection.css'
 import BlurText from './blurText';
-
-// import firstSectionLogo from '../assets/firstSection.png';
-// import rotateLogo from '../assets/rotateImage.png';
-// import './firstSection.css';
-// import BlurText from './blurText';
+import { motion } from 'framer-motion';
 
 export default function FirstSection() {
   return (
@@ -14,46 +9,45 @@ export default function FirstSection() {
       <div className="imageContainer">
         <img className="firstSectionLogo" src={firstSectionLogo} alt="" />
         <div className="textContent">
-          <BlurText
-            text={`WELCOME TO\nGREEN HAVEN CAFE`}
-            delay={100}
-            animateBy="words"
-            direction="top"
-            className="text-5xl font-bold text-white text-center whitespace-pre-line"
-          />
+          <h1 className="textHeadline">
+            <BlurText
+              text="WELCOME TO"
+              delay={100}
+              stepDuration={0.35}
+              animateBy="words"
+              direction="top"
+              className="textH1"
+            />
+            <BlurText
+              text="GREEN HAVEN CAFE"
+              delay={200}
+              stepDuration={0.5}
+              animateBy="words"
+              direction="top"
+              className="textH2"
+            />
+          </h1>
           <BlurText
             text="Your cozy urban retreat in the heart of Bangkok"
-            delay={150}
+            delay={220}
+            stepDuration={0.55}
             animateBy="words"
             direction="bottom"
-            className="text-lg text-white mt-4 text-center"
+            className="textInfo"
           />
-          <button
+          <motion.button
             className="button"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.25, duration: 1.5, ease: 'easeOut' }}
             onClick={() => {
               document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
             }}
           >
             VIEW OUR MENU
-          </button>
+          </motion.button>
         </div>
       </div>
     </section>
   );
 }
-
-
-// export default function FirstSection() {
-//   return (
-//     <section className="firstSection">
-//     <div className="imageContainer">
-//         <img className="firstSectionLogo" src={firstSectionLogo} alt=""/>
-//         <div className="textContent">
-//             <h1>WELCOME TO<br /> GREEN HAVEN CAFE</h1>
-//             <p>Your cozy urban retread in the heart of Bangkok</p>
-//             <button className='button' onClick={()=> {document.getElementById('menu').scrollIntoView({ behavior: 'smooth' })}}>VIEW OUR MENU</button>
-//         </div>
-//     </div>
-//     </section>
-//   )
-// }
