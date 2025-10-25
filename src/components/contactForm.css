@@ -99,3 +99,11 @@ textarea:hover::placeholder {
   box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
   background: linear-gradient(135deg, #1F522B, #338220);
 }
+
+.inputField.valid {
+  border-bottom-color: #4CAF50;
+}
+
+.inputField.invalid {
+  border-bottom-color: #E53935;
+}

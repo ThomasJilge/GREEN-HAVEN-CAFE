@@ -1,22 +1,50 @@
-import contactFormImage from '../assets/bkkContactForm.jpg'
-import './contactForm.css'
-
+import { useState } from 'react';
+import contactFormImage from '../assets/bkkContactForm.jpg';
+import './contactForm.css';
 
 export default function ContactForm() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [nameValid, setNameValid] = useState(null);
+  const [emailValid, setEmailValid] = useState(null);
+
+  const handleNameChange = (value) => {
+    setName(value);
+    setNameValid(value.trim().length >= 4);
+  };
+
+  const handleEmailChange = (value) => {
+    setEmail(value);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setEmailValid(emailRegex.test(value));
+  };
+
   return (
     <section className='contactFormContainer' id='contactForm'>
-        <div className="imageContainer">
-            <img className="contactFormLogo" src={contactFormImage} alt=""/>
-            <div className='contactContainer'>
-                <h3 className='contactFormHeadline'>Contact Us</h3>
-                    <form className='contactForm' action="">
-                        <input className='' type="text" placeholder='Name' />
-                        <input className='' type="text" placeholder='Email'/>
-                        <textarea className='' name="" id="" placeholder='Message'></textarea>
-                        <button className='button'>SEND</button>
-                    </form>
-            </div>
+      <div className="imageContainer">
+        <img className="contactFormLogo" src={contactFormImage} alt="" />
+        <div className='contactContainer'>
+          <h3 className='contactFormHeadline'>Contact Us</h3>
+          <form className='contactForm' action="">
+            <input
+              type="text"
+              placeholder="Name"
+              value={name}
+              onChange={(e) => handleNameChange(e.target.value)}
+              className={`inputField ${nameValid === null ? '' : nameValid ? 'valid' : 'invalid'}`}
+            />
+            <input
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => handleEmailChange(e.target.value)}
+              className={`inputField ${emailValid === null ? '' : emailValid ? 'valid' : 'invalid'}`}
+            />
+            <textarea className="inputField" placeholder="Message"></textarea>
+            <button className="button">SEND</button>
+          </form>
         </div>
+      </div>
     </section>
-  )
+  );
 }
