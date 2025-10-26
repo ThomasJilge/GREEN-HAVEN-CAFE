@@ -1,5 +1,17 @@
+.locationHeaderContainer {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    color: #1F522B;
+    font-size: 40px;
+    margin-bottom: 0;
+    text-decoration: underline;
+}
+
 .googleMapsContainer {
-    margin-top: 50px;
+    margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
