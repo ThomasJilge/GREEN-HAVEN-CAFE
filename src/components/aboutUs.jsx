@@ -25,12 +25,12 @@ export default function AboutUs() {
 
   const descriptions = [
     "Our coffee is ground using state-of-the-art technology to extract the best possible and most intense flavor from the bean",
-    "Freshly brewed espresso at the bar",
-    "Local ingredients meet modern design",
-    "Golden hour in our garden corner",
-    "Handcrafted pastries with Thai flair",
-    "Friendly faces and warm smiles",
-    "Bangkok’s rhythm in every detail"
+    "At our bar, we serve freshly brewed espresso crafted with care-rich in aroma, perfectly balanced, and topped with a velvety crema that invites you to pause and savor the moment",
+    "Locally sourced ingredients come together with clean, modern design-creating a space that feels both grounded and inspiring",
+    "Tucked into a leafy corner of Bangkok, our garden glows in the golden hour-peaceful, warm, and full of life",
+    "Soft glances. Honest warmth. Here, friendliness flows naturally—like the aroma of fresh coffee",
+    "Warm smiles. Kind eyes. A place where friendliness is more than a gesture-it’s a feeling",
+    "From textures to tones, our café reflects the dynamic rhythm of Bangkok-where tradition meets motion"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
