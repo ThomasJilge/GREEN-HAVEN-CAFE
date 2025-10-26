@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import contactFormImage from '../assets/bkkContactForm.jpg';
+import checkIcon from '../assets/checkMark.png';
+import crossIcon from '../assets/cross.png';
+
 import './contactForm.css';
 
 export default function ContactForm() {
@@ -26,20 +29,40 @@ export default function ContactForm() {
         <div className='contactContainer'>
           <h3 className='contactFormHeadline'>Contact Us</h3>
           <form className='contactForm' action="">
-            <input
-              type="text"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => handleNameChange(e.target.value)}
-              className={`inputField ${nameValid === null ? '' : nameValid ? 'valid' : 'invalid'}`}
-            />
-            <input
-              type="text"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => handleEmailChange(e.target.value)}
-              className={`inputField ${emailValid === null ? '' : emailValid ? 'valid' : 'invalid'}`}
-            />
+            <div className="inputWrapper">
+              <input
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => handleNameChange(e.target.value)}
+                className={`inputField ${nameValid === null ? '' : nameValid ? 'valid' : 'invalid'}`}
+              />
+              {nameValid !== null && (
+                <img
+                  src={nameValid ? checkIcon : crossIcon}
+                  alt={nameValid ? 'Valid' : 'Invalid'}
+                  className="validationIcon"
+                />
+              )}
+            </div>
+
+            <div className="inputWrapper">
+              <input
+                type="text"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => handleEmailChange(e.target.value)}
+                className={`inputField ${emailValid === null ? '' : emailValid ? 'valid' : 'invalid'}`}
+              />
+              {emailValid !== null && (
+                <img
+                  src={emailValid ? checkIcon : crossIcon}
+                  alt={emailValid ? 'Valid' : 'Invalid'}
+                  className="validationIcon"
+                />
+              )}
+            </div>
+
             <textarea className="inputField" placeholder="Message"></textarea>
             <button className="button">SEND</button>
           </form>

@@ -100,6 +100,25 @@ textarea:hover::placeholder {
   background: linear-gradient(135deg, #1F522B, #338220);
 }
 
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.validationIcon {
+  position: absolute;
+  right: 2px;
+  width: 15px;
+  height: 15px;
+}
+
+/* .inputField {
+  flex: 1;
+  padding-right: 36px; 
+} */
+
 .inputField.valid {
   border-bottom-color: #4CAF50;
 }
