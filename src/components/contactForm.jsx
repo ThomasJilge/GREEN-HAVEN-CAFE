@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import contactFormImage from '../assets/bkkContactForm.jpg';
-import checkIcon from '../assets/checkMark.png';
-import crossIcon from '../assets/cross.png';
-
+import ValidationIcon from './validationIcons';
 import './contactForm.css';
 
 export default function ContactForm() {
@@ -38,11 +36,7 @@ export default function ContactForm() {
                 className={`inputField ${nameValid === null ? '' : nameValid ? 'valid' : 'invalid'}`}
               />
               {nameValid !== null && (
-                <img
-                  src={nameValid ? checkIcon : crossIcon}
-                  alt={nameValid ? 'Valid' : 'Invalid'}
-                  className="validationIcon"
-                />
+                <ValidationIcon isValid={nameValid} />
               )}
             </div>
 
@@ -55,11 +49,7 @@ export default function ContactForm() {
                 className={`inputField ${emailValid === null ? '' : emailValid ? 'valid' : 'invalid'}`}
               />
               {emailValid !== null && (
-                <img
-                  src={emailValid ? checkIcon : crossIcon}
-                  alt={emailValid ? 'Valid' : 'Invalid'}
-                  className="validationIcon"
-                />
+                <ValidationIcon isValid={emailValid} />
               )}
             </div>
 
