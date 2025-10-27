@@ -7,6 +7,28 @@ import ValidatedInput from './validateInput';
 import LoadingSpinner from './loadingSpinner';
 import StatusOverlay from './statusOverlayForm';
 
+function generateTimeSlots(start, end, intervalMinutes) {
+  const slots = [];
+  const [startHour, startMinute] = start.split(':').map(Number);
+  const [endHour, endMinute] = end.split(':').map(Number);
+
+  let current = new Date();
+  current.setHours(startHour, startMinute, 0, 0);
+
+  const endTime = new Date();
+  endTime.setHours(endHour, endMinute, 0, 0);
+
+  while (current <= endTime) {
+    const hours = current.getHours().toString().padStart(2, '0');
+    const minutes = current.getMinutes().toString().padStart(2, '0');
+    slots.push(`${hours}:${minutes}`);
+    current.setMinutes(current.getMinutes() + intervalMinutes);
+  }
+
+  return slots;
+}
+
+
 export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -31,6 +53,7 @@ const handleSubmit = async (e) => {
 
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.mail);
   const isValidName = formData.name.trim().length >= 4;
+  const isValidTime = formData.time >= '07:00' && formData.time <= '18:00';
 
   if (!isValidEmail || !isValidName) {
     setStatus('error');
@@ -104,12 +127,17 @@ const handleSubmit = async (e) => {
                     </select>
                   </div>
                   <div className='bookingFormContainerTwo'>
-                    <input
-                      type="time"
+                  <select
                       name="time"
                       value={formData.time}
                       onChange={handleChange}
-                    />
+                      className="bookingSelect"
+                    >
+                      <option value="">Select time</option>
+                      {generateTimeSlots('07:00', '18:00', 15).map((time) => (
+                        <option key={time} value={time}>{time}</option>
+                      ))}
+                    </select>
                     <div className="seatingOptions">
                       <label className='label'>
                         <input
