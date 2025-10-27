@@ -2,6 +2,8 @@ import './bookingForm.css';
 import bookingFormImage from '../assets/bookingFormTwo.jpg';
 import { useState } from 'react';
 import { submitBooking } from '../utils/submitBooking';
+import { notifyOwner } from '../utils/email';
+
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
@@ -18,23 +20,26 @@ export default function BookingForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const success = await submitBooking(formData);
-    if (success) {
-      alert('Booking submitted!');
-      setFormData({
-        name: '',
-        date: '',
-        time: '',
-        people: '',
-        seating: '',
-        message: '',
-      });
-    } else {
-      alert('Error submitting booking.');
-    }
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const success = await submitBooking(formData);
+
+  if (success) {
+    await notifyOwner(formData); 
+    alert('Booking submitted!');
+    setFormData({
+      name: '',
+      date: '',
+      time: '',
+      people: '',
+      seating: '',
+      message: '',
+    });
+  } else {
+    alert('Error submitting booking.');
+  }
+};
+
 
   return (
     <section className='bookingFormContainer' id='bookingForm'>
