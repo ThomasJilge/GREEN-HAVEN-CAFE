@@ -1,0 +1,22 @@
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.validationIcon {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color 0.3s ease;
+}
+
+.inputField.valid {
+  border-bottom-color: #4CAF50;
+}
+
+.inputField.invalid {
+  border-bottom-color: #E53935;
+}

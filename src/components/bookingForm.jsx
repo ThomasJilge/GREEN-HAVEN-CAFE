@@ -3,7 +3,7 @@ import bookingFormImage from '../assets/bookingFormTwo.jpg';
 import { useState } from 'react';
 import { submitBooking } from '../utils/submitBooking';
 import { notifyOwner } from '../utils/email';
-
+import ValidatedInput from './validateInput';
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
@@ -12,6 +12,7 @@ export default function BookingForm() {
     time: '',
     people: '',
     seating: '',
+    mail: '',
     message: '',
   });
 
@@ -23,9 +24,11 @@ export default function BookingForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const isValidEmail = /\S+@\S+\.\S+/.test(formData.mail);
-    if (!isValidEmail) {
-      alert('Please enter a valid email address.');
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.mail);
+    const isValidName = formData.name.trim().length >= 4;
+
+    if (!isValidEmail || !isValidName) {
+      alert('Please enter a valid name and email.');
       return;
     }
 
@@ -47,6 +50,7 @@ export default function BookingForm() {
       alert('Error submitting booking.');
     }
   };
+
   return (
     <section className='bookingFormContainer' id='bookingForm'>
       <div className="imageContainer">
@@ -60,8 +64,7 @@ export default function BookingForm() {
             <form className='bookingForm' onSubmit={handleSubmit}>
               <div className='bookingFormRow'>
                 <div className='bookingFormContainerOne'>
-                  <input
-                    type="text"
+                  <ValidatedInput
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
@@ -114,12 +117,11 @@ export default function BookingForm() {
                       Outside
                     </label>
                   </div>
-                   <input
-                      type="text"
-                      name="mail"
-                      value={formData.mail}
-                      onChange={handleChange}
-                      placeholder="Email"
+                  <ValidatedInput
+                    name="mail"
+                    value={formData.mail}
+                    onChange={handleChange}
+                    placeholder="Email"
                   />
                 </div>
               </div>

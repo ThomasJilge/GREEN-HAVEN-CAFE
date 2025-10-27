@@ -2,6 +2,8 @@ import { useState } from 'react';
 import contactFormImage from '../assets/bkkContactForm.jpg';
 import ValidationIcon from './validationIcons';
 import './contactForm.css';
+import './validateInput.css';
+import ValidatedInput from './validateInput';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -28,12 +30,11 @@ export default function ContactForm() {
           <h3 className='contactFormHeadline'>Contact Us</h3>
           <form className='contactForm' action="">
             <div className="inputWrapper">
-              <input
-                type="text"
-                placeholder="Name"
+              <ValidatedInput
+                name="name"
                 value={name}
                 onChange={(e) => handleNameChange(e.target.value)}
-                className={`inputField ${nameValid === null ? '' : nameValid ? 'valid' : 'invalid'}`}
+                placeholder="Name"
               />
               {nameValid !== null && (
                 <ValidationIcon isValid={nameValid} />
@@ -41,12 +42,11 @@ export default function ContactForm() {
             </div>
 
             <div className="inputWrapper">
-              <input
-                type="text"
-                placeholder="Email"
+              <ValidatedInput
+                name="mail"
                 value={email}
                 onChange={(e) => handleEmailChange(e.target.value)}
-                className={`inputField ${emailValid === null ? '' : emailValid ? 'valid' : 'invalid'}`}
+                placeholder="Email"
               />
               {emailValid !== null && (
                 <ValidationIcon isValid={emailValid} />
