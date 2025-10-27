@@ -20,27 +20,33 @@ export default function BookingForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const success = await submitBooking(formData);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  if (success) {
-    await notifyOwner(formData); 
-    alert('Booking submitted!');
-    setFormData({
-      name: '',
-      date: '',
-      time: '',
-      people: '',
-      seating: '',
-      message: '',
-    });
-  } else {
-    alert('Error submitting booking.');
-  }
-};
+    const isValidEmail = /\S+@\S+\.\S+/.test(formData.mail);
+    if (!isValidEmail) {
+      alert('Please enter a valid email address.');
+      return;
+    }
 
+    const success = await submitBooking(formData);
 
+    if (success) {
+      await notifyOwner(formData);
+      alert('Booking submitted!');
+      setFormData({
+        name: '',
+        date: '',
+        time: '',
+        people: '',
+        seating: '',
+        mail: '',
+        message: '',
+      });
+    } else {
+      alert('Error submitting booking.');
+    }
+  };
   return (
     <section className='bookingFormContainer' id='bookingForm'>
       <div className="imageContainer">
@@ -108,6 +114,13 @@ const handleSubmit = async (e) => {
                       Outside
                     </label>
                   </div>
+                   <input
+                      type="text"
+                      name="mail"
+                      value={formData.mail}
+                      onChange={handleChange}
+                      placeholder="Email"
+                  />
                 </div>
               </div>
               <div className='messageContainer'>

@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAGGMw4BUY6AC8alXF0neq0hqrHrW5sces',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: 'bkk-cafe.firebaseapp.com',
   projectId: 'bkk-cafe',
   storageBucket: 'bkk-cafe.firebasestorage.app',
