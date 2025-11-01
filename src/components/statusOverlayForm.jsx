@@ -1,27 +1,29 @@
-// import { FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
-// import './statusOverlayForm.css';
-
-// export default function StatusOverlay({ type }) {
-//   return (
-//     <div className="statusOverlay">
-//       {type === 'success' && <FaCheckCircle className="statusIcon success" />}
-//       {type === 'error' && <FaExclamationCircle className="statusIcon error" />}
-//     </div>
-//   );
-// }
-
+import { useEffect } from 'react';
 import { FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
 import './statusOverlayForm.css';
 
-export default function StatusOverlay({ type }) {
+export default function StatusOverlay({ type, onClose }) {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (onClose) onClose();
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [onClose]);
+
+  const message =
+    type === 'success' ? 'Booking successful' : 'Booking failed';
+
   return (
     <div className="statusOverlay">
-      {type === 'success' && (
-        <FaCheckCircle style={{ fontSize: '140px', color: '#4CAF50' }} />
-      )}
-      {type === 'error' && (
-        <FaExclamationCircle style={{ fontSize: '140px', color: '#D32F2F' }} />
-      )}
+      <div className="statusContent">
+        {type === 'success' && (
+          <FaCheckCircle size={140} color="#4CAF50" />
+        )}
+        {type === 'error' && (
+          <FaExclamationCircle size={140} color="#D32F2F" />
+        )}
+        <p className="statusMessage">{message}</p>
+      </div>
     </div>
   );
 }

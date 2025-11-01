@@ -11,14 +11,15 @@
   z-index: 999;
 }
 
-/* .statusIcon {
-  font-size: 250px;
-} */
-
-.success {
-  color: #4CAF50;
+.statusContent {
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-.error {
-  color: #D32F2F;
+.statusMessage {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #1F522B;
 }
+
