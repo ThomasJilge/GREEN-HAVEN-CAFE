@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ValidationIcon from './validationIcons';
 import './validateInput.css';
 
@@ -16,6 +16,12 @@ export default function ValidatedInput({ name, value, onChange, placeholder, typ
     onChange(e); 
     setIsValid(validate(val));
   };
+
+    useEffect(() => {
+    if (value === '') {
+      setIsValid(null);
+    }
+  }, [value]);
 
   return (
     <div className="inputWrapper">
