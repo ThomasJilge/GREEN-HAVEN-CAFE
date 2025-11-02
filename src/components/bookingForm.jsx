@@ -54,6 +54,26 @@ const handleSubmit = async (e) => {
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.mail);
   const isValidName = formData.name.trim().length >= 4;
   const isValidTime = formData.time >= '07:00' && formData.time <= '18:00';
+  const isValidDate = formData.date.trim() !== '';
+  const isValidPeople = formData.people.trim() !== '';
+  const isValidSeating = formData.seating.trim() !== '';
+  const isValidMessage = formData.message.trim().length > 0;
+
+  const allValid =
+  isValidEmail &&
+  isValidName &&
+  isValidTime &&
+  isValidDate &&
+  isValidPeople &&
+  isValidSeating &&
+  isValidMessage;
+
+if (!allValid) {
+  setStatus('error');
+  setTimeout(() => setStatus(null), 2000);
+  return;
+}
+
 
   if (!isValidEmail || !isValidName) {
     setStatus('error');
@@ -107,18 +127,21 @@ const handleSubmit = async (e) => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Name"
+                      required
                     />
                     <input
                       type="date"
                       name="date"
                       value={formData.date}
                       onChange={handleChange}
+                      required
                     />
                     <select
                       name="people"
                       className="bookingSelect"
                       value={formData.people}
                       onChange={handleChange}
+                      required
                     >
                       <option value="">Number of people</option>
                       {[...Array(10)].map((_, i) => (
@@ -132,6 +155,7 @@ const handleSubmit = async (e) => {
                       value={formData.time}
                       onChange={handleChange}
                       className="bookingSelect"
+                      required
                     >
                       <option value="">Select time</option>
                       {generateTimeSlots('07:00', '18:00', 15).map((time) => (
@@ -146,6 +170,7 @@ const handleSubmit = async (e) => {
                           value="inside"
                           checked={formData.seating === 'inside'}
                           onChange={handleChange}
+                          required
                         />
                         Inside
                       </label>
@@ -156,6 +181,7 @@ const handleSubmit = async (e) => {
                           value="outside"
                           checked={formData.seating === 'outside'}
                           onChange={handleChange}
+                          required
                         />
                         Outside
                       </label>
@@ -165,6 +191,7 @@ const handleSubmit = async (e) => {
                       value={formData.mail}
                       onChange={handleChange}
                       placeholder="Email"
+                      required
                     />
                   </div>
                 </div>
@@ -174,6 +201,7 @@ const handleSubmit = async (e) => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Anything we should know?"
+                    required
                   />
                 </div>
                 <button className='button' type="submit">BOOK NOW</button>
