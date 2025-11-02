@@ -1,5 +1,6 @@
 import firstSectionLogo from '../assets/firstSection.png'
 import './firstSection.css'
+import './button.css'
 import BlurText from './blurText';
 import { motion } from 'framer-motion';
 

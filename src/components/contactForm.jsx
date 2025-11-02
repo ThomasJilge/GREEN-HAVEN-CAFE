@@ -3,6 +3,7 @@ import contactFormImage from '../assets/bkkContactForm.jpg';
 import ValidationIcon from './validationIcons';
 import './contactForm.css';
 import './validateInput.css';
+import './button.css'
 import ValidatedInput from './validateInput';
 
 export default function ContactForm() {
