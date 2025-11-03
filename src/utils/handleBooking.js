@@ -1,8 +1,8 @@
-const N8N_WEBHOOK_URL = import.meta.env.VITE_N8N_WEBHOOK_URL;
+const N8N_BOOKING_WEBHOOK_URL = import.meta.env.VITE_N8N_BOOKING_WEBHOOK_URL;
 
-export async function notifyOwner(formData) {
+export async function handleBooking(formData) {
   try {
-    const response = await fetch(N8N_WEBHOOK_URL, {
+    const response = await fetch(N8N_BOOKING_WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),

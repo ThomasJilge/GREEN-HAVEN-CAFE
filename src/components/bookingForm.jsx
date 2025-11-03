@@ -3,7 +3,7 @@ import './button.css';
 import bookingFormImage from '../assets/bookingFormTwo.jpg';
 import { useState } from 'react';
 import { submitBooking } from '../utils/submitBooking';
-import { notifyOwner } from '../utils/notifyOwner';
+import { handleBooking } from '../utils/handleBooking';
 import ValidatedInput from './validateInput';
 import LoadingSpinner from './loadingSpinner';
 import StatusOverlay from './statusOverlayForm';
@@ -42,6 +42,7 @@ export default function BookingForm() {
 
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -70,6 +71,7 @@ export default function BookingForm() {
 
     if (!allValid) {
       setStatus('error');
+      setStatusMessage('Bitte alle Felder korrekt ausfüllen.');
       setTimeout(() => setStatus(null), 2000);
       return;
     }
@@ -79,9 +81,10 @@ export default function BookingForm() {
     const success = await submitBooking(formData);
 
     if (success) {
-      await notifyOwner(formData); // n8n übernimmt Mailversand
+      await handleBooking(formData);
       setLoading(false);
       setStatus('success');
+      setStatusMessage('Booking succesful!');
       setFormData({
         name: '',
         date: '',
@@ -91,18 +94,25 @@ export default function BookingForm() {
         mail: '',
         message: '',
       });
-      setTimeout(() => setStatus(null), 2000);
     } else {
       setLoading(false);
       setStatus('error');
-      setTimeout(() => setStatus(null), 2000);
+      setStatusMessage('Booking failed!');
     }
+
+    setTimeout(() => setStatus(null), 2000);
   };
 
   return (
     <>
       {loading && <LoadingSpinner />}
-      {status && <StatusOverlay type={status} />}
+      {status && (
+        <StatusOverlay
+          type={status}
+          message={statusMessage}
+          onClose={() => setStatus(null)}
+        />
+      )}
       <section className='bookingFormContainer' id='bookingForm'>
         <div className="imageContainer">
           <img className="bookingFormLogo" src={bookingFormImage} alt="" />

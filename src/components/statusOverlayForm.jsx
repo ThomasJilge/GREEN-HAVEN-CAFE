@@ -2,16 +2,13 @@ import { useEffect } from 'react';
 import { FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
 import './statusOverlayForm.css';
 
-export default function StatusOverlay({ type, onClose }) {
+export default function StatusOverlay({ type, message, onClose }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (onClose) onClose();
     }, 3000);
     return () => clearTimeout(timer);
   }, [onClose]);
-
-  const message =
-    type === 'success' ? 'Booking successful' : 'Booking failed';
 
   return (
     <div className="statusOverlay">
@@ -27,3 +24,4 @@ export default function StatusOverlay({ type, onClose }) {
     </div>
   );
 }
+
