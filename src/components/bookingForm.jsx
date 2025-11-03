@@ -1,9 +1,9 @@
 import './bookingForm.css';
-import './button.css'
+import './button.css';
 import bookingFormImage from '../assets/bookingFormTwo.jpg';
 import { useState } from 'react';
 import { submitBooking } from '../utils/submitBooking';
-import { notifyOwner } from '../utils/email';
+import { notifyOwner } from '../utils/notifyOwner';
 import ValidatedInput from './validateInput';
 import LoadingSpinner from './loadingSpinner';
 import StatusOverlay from './statusOverlayForm';
@@ -29,7 +29,6 @@ function generateTimeSlots(start, end, intervalMinutes) {
   return slots;
 }
 
-
 export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -49,63 +48,56 @@ export default function BookingForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.mail);
-  const isValidName = formData.name.trim().length >= 4;
-  const isValidTime = formData.time >= '07:00' && formData.time <= '18:00';
-  const isValidDate = formData.date.trim() !== '';
-  const isValidPeople = formData.people.trim() !== '';
-  const isValidSeating = formData.seating.trim() !== '';
-  const isValidMessage = formData.message.trim().length > 0;
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.mail);
+    const isValidName = formData.name.trim().length >= 4;
+    const isValidTime = formData.time >= '07:00' && formData.time <= '18:00';
+    const isValidDate = formData.date.trim() !== '';
+    const isValidPeople = formData.people.trim() !== '';
+    const isValidSeating = formData.seating.trim() !== '';
+    const isValidMessage = formData.message.trim().length > 0;
 
-  const allValid =
-  isValidEmail &&
-  isValidName &&
-  isValidTime &&
-  isValidDate &&
-  isValidPeople &&
-  isValidSeating &&
-  isValidMessage;
+    const allValid =
+      isValidEmail &&
+      isValidName &&
+      isValidTime &&
+      isValidDate &&
+      isValidPeople &&
+      isValidSeating &&
+      isValidMessage;
 
-if (!allValid) {
-  setStatus('error');
-  setTimeout(() => setStatus(null), 2000);
-  return;
-}
+    if (!allValid) {
+      setStatus('error');
+      setTimeout(() => setStatus(null), 2000);
+      return;
+    }
 
+    setLoading(true);
 
-  if (!isValidEmail || !isValidName) {
-    setStatus('error');
-    setTimeout(() => setStatus(null), 2000);
-    return;
-  }
+    const success = await submitBooking(formData);
 
-  setLoading(true);
-
-  const success = await submitBooking(formData);
-
-  if (success) {
-    await notifyOwner(formData);
-    setLoading(false);
-    setStatus('success');
-    setFormData({
-      name: '',
-      date: '',
-      time: '',
-      people: '',
-      seating: '',
-      mail: '',
-      message: '',
-    });
-    setTimeout(() => setStatus(null), 2000);
-  } else {
-    setLoading(false);
-    setStatus('error');
-    setTimeout(() => setStatus(null), 2000);
-  }
-};
+    if (success) {
+      await notifyOwner(formData); // n8n übernimmt Mailversand
+      setLoading(false);
+      setStatus('success');
+      setFormData({
+        name: '',
+        date: '',
+        time: '',
+        people: '',
+        seating: '',
+        mail: '',
+        message: '',
+      });
+      setTimeout(() => setStatus(null), 2000);
+    } else {
+      setLoading(false);
+      setStatus('error');
+      setTimeout(() => setStatus(null), 2000);
+    }
+  };
 
   return (
     <>
@@ -151,7 +143,7 @@ if (!allValid) {
                     </select>
                   </div>
                   <div className='bookingFormContainerTwo'>
-                  <select
+                    <select
                       name="time"
                       value={formData.time}
                       onChange={handleChange}
