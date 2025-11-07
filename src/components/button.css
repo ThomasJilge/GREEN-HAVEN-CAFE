@@ -1,13 +1,13 @@
 .button {
   background: linear-gradient(135deg, #338220, #1F522B);
   color: white;
-  width: 200px;
-  height: 50px;
-  border-radius: 12px;
+  width: clamp(10rem, 25vw, 12.5rem);
+  height: clamp(2.5rem, 6vw, 3.125rem);
+  border-radius: 0.75rem;
   border: none;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  letter-spacing: 0.03125rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
   transition: all 0.4s ease;
 }
 
