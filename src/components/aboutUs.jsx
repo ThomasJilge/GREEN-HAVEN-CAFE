@@ -10,7 +10,7 @@ import arrowRightImage from '../assets/arrowRight.png';
 import './aboutUs.css';
 import OpenStatus from './openStatus';
 import './openStatus.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function AboutUs() {
   const images = [
@@ -25,22 +25,44 @@ export default function AboutUs() {
 
   const descriptions = [
     "Our coffee is ground using state-of-the-art technology to extract the best possible and most intense flavor from the bean",
-    "At our bar, we serve freshly brewed espresso crafted with care-rich in aroma, perfectly balanced, and topped with a velvety crema that invites you to pause and savor the moment",
-    "Locally sourced ingredients come together with clean, modern design-creating a space that feels both grounded and inspiring",
-    "Tucked into a leafy corner of Bangkok, our garden glows in the golden hour-peaceful, warm, and full of life",
+    "At our bar, we serve freshly brewed espresso crafted with care—rich in aroma, perfectly balanced, and topped with a velvety crema that invites you to pause and savor the moment",
+    "Locally sourced ingredients come together with clean, modern design—creating a space that feels both grounded and inspiring",
+    "Tucked into a leafy corner of Bangkok, our garden glows in the golden hour—peaceful, warm, and full of life",
     "Soft glances. Honest warmth. Here, friendliness flows naturally—like the aroma of fresh coffee",
-    "Warm smiles. Kind eyes. A place where friendliness is more than a gesture-it’s a feeling",
-    "From textures to tones, our café reflects the dynamic rhythm of Bangkok-where tradition meets motion"
+    "Warm smiles. Kind eyes. A place where friendliness is more than a gesture—it’s a feeling",
+    "From textures to tones, our café reflects the dynamic rhythm of Bangkok—where tradition meets motion"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      const width = window.innerWidth;
+      if (width <= 480) {
+        setVisibleCount(1);
+      } else if (width <= 768) {
+        setVisibleCount(2);
+      } else {
+        setVisibleCount(3);
+      }
+    };
+
+    updateVisibleCount(); // Initial check
+    window.addEventListener('resize', updateVisibleCount);
+    return () => window.removeEventListener('resize', updateVisibleCount);
+  }, []);
 
   const prevImage = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setCurrentIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    );
   };
 
   const nextImage = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) =>
+      prev === images.length - 1 ? 0 : prev + 1
+    );
   };
 
   return (
@@ -71,7 +93,7 @@ export default function AboutUs() {
         />
 
         <div className="sliderImages">
-          {[0, 1, 2].map((offset) => {
+          {Array.from({ length: visibleCount }).map((_, offset) => {
             const index = (currentIndex + offset) % images.length;
             return (
               <div className="imageCard" key={index}>
@@ -111,5 +133,3 @@ export default function AboutUs() {
     </section>
   );
 }
-
-

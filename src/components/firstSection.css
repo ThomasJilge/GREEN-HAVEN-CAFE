@@ -22,14 +22,9 @@
   text-align: center;
 }
 
-/* p {
-    font-size: 20px;
-} */
-
 p {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
-
 
 .textHeadline {
   display: flex;
@@ -38,7 +33,6 @@ p {
 }
 
 .textH1, .textH2 {
-  /* font-size: 48px; */
   font-size: clamp(1.5rem, 5vw, 3rem);
   margin: 0;
 }

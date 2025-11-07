@@ -9,9 +9,9 @@
     flex-direction: column;
 }
 
-h2 {
+.aboutUsHeader h2 {
     color: #1F522B;
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-bottom: 0;
     text-decoration: underline;
 }
@@ -25,6 +25,8 @@ h2 {
 
 .textAboutUs {
     max-width: 800px;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    padding: 0 10px 0 10px;
 }
 
 .highlight {
@@ -59,14 +61,20 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  margin-top: 32px;
+  flex-wrap: nowrap;
+  gap: 16px;
+  width: 100%;
+  max-width: 1076px;
+  padding: 0 16px;
 }
+
 
 .sliderImages {
   display: flex;
-  gap: 16px;
   justify-content: center;
+  gap: 16px;
+  flex: 1;
+  max-width: 100%;
 }
 
 .arrow {
@@ -81,11 +89,12 @@ h2 {
 }
 
 .imageCard {
-  width: 300px;
-  height: 450px;
+  width: clamp(200px, 30vw, 300px);
+  height: clamp(300px, 45vw, 450px);
   perspective: 1000px;
   flex-shrink: 0;
 }
+
 
 .imageInner {
   position: relative;
@@ -150,6 +159,19 @@ h2 {
   margin: 0;
   padding: 0 10px 0 10px;
 }
+
+@media (max-width: 768px) {
+
+  .aboutUsHeader h2 {
+    font-size: 1.875rem;
+  }
+
+}
+
+
+
+
+
 
 
 
