@@ -1,6 +1,3 @@
-// import aboutUsImageOne from '../assets/aboutUsOne.png'
-// import aboutUsImageTwo from '../assets/aboutUsTwo.png'
-// import aboutUsImageThree from '../assets/aboutUsThree.png'
 import menuImage from '../assets/menu.png'
 import './menu.css'
 
