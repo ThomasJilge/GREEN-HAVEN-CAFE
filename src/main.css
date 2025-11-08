@@ -1,7 +1,7 @@
 body {
     margin: 0;
     background-color: #F5EBDD;
-    /* max-width: 1440px; */
+    box-sizing: border-box;
 }
 
 h1 {

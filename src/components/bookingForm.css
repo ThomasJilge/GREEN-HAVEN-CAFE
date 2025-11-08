@@ -13,7 +13,9 @@
 }
 
 .bookingContainer {
-    width: 600px;
+    max-width: 600px;
+    /* width: 100%; */
+    /* width: 600px; */
     height: 550px;
     position: absolute;
     /* justify-content: center; */
@@ -23,6 +25,9 @@
     background-color: #FDF6E3;
     opacity: 0.85;
     border-radius: 10px;
+    inset: 0;
+    margin: auto;
+    width: calc(100% - 20px);
 }
 
 .bookingFormHeaderContainer {
