@@ -68,6 +68,8 @@
   flex-direction: column;
   /* justify-content: center; */
   gap: 20px;
+  /* flex: 1; */
+  /* min-width: 0; */
 }
 
 .bookingForm {
@@ -78,6 +80,7 @@
     justify-content: center;
     width: 80%;
     margin-top: 10px;
+    /* padding: 0 10px; */
 }
 
 .bookingFormRow {
@@ -86,10 +89,12 @@
   gap: 40px;
   justify-content: center;
   width: 100%;
+  /* padding: 0 10px; */
 }
 
 .messageContainer {
-  width: 80%;
+    width: 100%;
+    max-width: 372.8px;
 }
 
 input, textarea {
@@ -147,18 +152,27 @@ textarea:hover::placeholder {
 
 .seatingOptions {
   display: flex;
-  gap: 20px;
+  gap: 5px;
   color: #338220;
   font-size: 16px;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .seatingOptions input[type="radio"] {
-  margin-right: 8px;
+  margin: 0 2px 0 0;
 }
 
 .label {
     display: flex;
+}
+
+@media (max-width: 480px) {
+
+  .bookingFormRow {
+    flex-direction: column;
+    gap: 20px;
+  }
+
 }
 
 
