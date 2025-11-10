@@ -5,22 +5,22 @@
 
 h2 {
     color: #1F522B;
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-bottom: 0;
     text-decoration: underline;
 }
 
 .googleMapsContainer {
-    margin-top: 20px;
+    margin-top: 1.25rem;
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 100px;
-    padding: 0 10px;
+    gap: 6.25rem;
+    padding: 0 0.625rem;
 }
 
 iframe {
-    max-width: 600px;
+    max-width: 37.5rem;
     width: 100%;
 }
 
@@ -37,7 +37,7 @@ iframe {
     .googleMapsContainer {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 2.5rem;
         
     }
 

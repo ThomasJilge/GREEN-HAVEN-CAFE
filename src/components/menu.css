@@ -13,7 +13,7 @@
 
 h2 {
     color: #1F522B;
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-bottom: 0;
     text-decoration: underline;
 }
@@ -23,29 +23,29 @@ h2 {
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-top: 20px;
-    max-width: 750px;
+    margin-top: 1.25rem;
+    max-width: 46.875rem;
     width: 100%;
 }
 
 .menuTextContainer {
     position: absolute;
-    height: 450px;
+    height: 28.125rem;
     display: flex;
-    max-width: 750px;
+    max-width: 46.875rem;
     width: 100%;
 }
 
 .menuImage {
     width: 100%;
-    height: 770px;
-    border-radius: 10px;
+    height: 48.125rem;
+    border-radius: 0.625rem;
     object-fit: cover;
     opacity: 0.5;
 }
 
 h3 {
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 .menuOne, .menuTwo {
@@ -70,7 +70,7 @@ ul {
 
 .hotColdContainer {
   display: grid;
-  grid-template-columns: 1fr 60px 60px; 
+  grid-template-columns: 1fr 3.75rem 3.75rem; 
   width: 90%;
   text-align: center;
   font-weight: bold;
@@ -91,12 +91,12 @@ ul {
 
 .coffeeList li, .nonCoffeeList li {
   display: grid;
-  grid-template-columns: 1fr 60px 60px;
+  grid-template-columns: 1fr 3.75rem 3.75rem;
   align-items: center;
   text-align: center;
-  padding: 5px;
+  padding: 0.3125rem;
   font-weight: bold;
-  margin: 0 30px 0 30px;
+  margin: 0 1.875rem 0 1.875rem;
 }
 
 .coffeeList .name, .nonCoffeeList .name {
@@ -104,7 +104,7 @@ ul {
 }
 
 .dividingBar {
-    width: 1px;
+    width: 0.0625rem;
     height: auto;
     background-color: rgb(59, 58, 58);
 }
@@ -112,7 +112,7 @@ ul {
 @media (max-width: 768px) {
 
     .imageMenuContainer {
-    padding: 0 10px;
+    padding: 0 0.625rem;
   }
 
   .menuTextContainer {
@@ -122,7 +122,7 @@ ul {
   }
 
   .menuImage {
-    height: 800px;
+    height: 50rem;
   }
 
   .menuTextHeadlineOne h3 {
@@ -137,16 +137,16 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 450px;
+    height: 28.125rem;
     overflow-y: auto;
     box-sizing: border-box;
-    border-radius: 10px;
+    border-radius: 0.625rem;
   }
 
   .menuOne,
   .menuTwo {
     width: 75%;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 
   .menuTextContainer {
@@ -160,7 +160,7 @@ ul {
 }
 
 .menuImage {
-    height: 550px;
+    height: 34.375rem;
   }
 }
 

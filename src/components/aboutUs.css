@@ -24,9 +24,9 @@
 }
 
 .textAboutUs {
-    max-width: 800px;
+    max-width: 50rem;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
-    padding: 0 10px 0 10px;
+    padding: 0 0.625rem;
 }
 
 .highlight {
@@ -36,7 +36,7 @@
 
 .imageContainer {
     display: flex;
-    gap: 50px;
+    gap: 3.125rem;
     justify-content: center;
 }
 
@@ -46,15 +46,15 @@
 
 .address, .openingHours {
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
 }
 
 .addressText, .openingHoursText {
-    margin: 0 0 10px 0;
+    margin: 0 0 0.625rem;
 }
 
 .openingHoursContainer {
-    margin-top: 15px;
+    margin-top: 0.9375rem;
 }
 
 .imageSliderContainer {
@@ -62,33 +62,28 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1076px;
-  padding: 20px;
+  max-width: 67.25rem;
+  padding: 1.25rem;
   position: relative;
   box-sizing: border-box;
 }
 
 .sliderImages {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
   width: 90%;
 }
 
 .arrow {
-  width: 40px;
+  width: 2.5rem;
   cursor: pointer;
   transition: transform 0.2s ease;
   flex-shrink: 0;
 }
 
-.arrowLeft {
-  margin-right: 10px; 
-  margin-left: 10px;  
-}
-
-.arrowRight {
-  margin-left: 10px;
-  margin-right: 10px;
+.arrowLeft, .arrowRight {
+  margin-right: 0.625rem; 
+  margin-left: 0.625rem;  
 }
 
 .arrow:hover {
@@ -96,9 +91,9 @@
 }
 
 .imageCard {
-  width: clamp(200px, 30vw, 300px);
-  height: clamp(300px, 45vw, 450px);
-  perspective: 1000px;
+  width: clamp(12.5rem, 30vw, 18.75rem);
+  height: clamp(18.75rem, 45vw, 28.125rem);
+  perspective: 62.5rem;
   flex: 1 1 auto; 
   min-width: 0;   
 }
@@ -120,9 +115,9 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.3);
 }
 
 .imageFront img {
@@ -130,7 +125,7 @@
   height: 100%;
   object-fit: cover;
   filter: brightness(1.3);
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 .imageBack {
@@ -144,7 +139,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   overflow: hidden;
 }
 
@@ -156,16 +151,16 @@
   background-color: rgba(247, 242, 242, 0.596);
   color: #1F522B;
   z-index: 1;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.3);
   width: 100%;
   height: 100%;
 }
 
 .imageDescription {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
   margin: 0;
-  padding: 0 10px 0 10px;
+  padding: 0 0.625rem 0 0.625rem;
 }
 
 @media (max-width: 768px) {

@@ -1,15 +1,13 @@
 .footer {
-    height: 150px;
     height: auto;
     background-color: #1F522B;
 }
 
 .footerContainer {
-    /* max-width: 1440px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 24px 0 24px;
+    padding: 0 1.5rem;
 }
 
 .copyRightContainer {
@@ -31,18 +29,18 @@
 
 .iconContainer {
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
 }
 
 .footerLogo {
-    width: 250px;
-    height: 150px;
+    width: 15.625rem;
+    height: 9.375rem;
     display: block;
 }
 
 .footerIcon {
-    width: 35px;
-    height: 35px;
+    width: 2.1875rem;
+    height: 2.1875rem;
 }
 
 .footerIcon:hover {
@@ -56,11 +54,11 @@
 
     .footerContainer {
         flex-direction: column;
-        padding-bottom: 24px;
+        padding-bottom: 1.5rem;
     }
 
     .copyRightContainer {
-        padding-bottom: 15px;
+        padding-bottom: 0.9375rem;
     }
 
 }
@@ -68,8 +66,8 @@
 @media (max-width: 480px) {
 
     .footerLogo {
-        width: 150px;
-        height: 100px;
+        width: 9.375rem;
+        height: 6.25rem;
     }
 
 }

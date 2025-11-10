@@ -1,6 +1,6 @@
 .contactFormContainer {
     display: flex;
-    margin-top: 50px;
+    margin-top: 3.125rem;
 }
 
 .imageContainer {
@@ -12,10 +12,10 @@
 }
 
 .contactContainer {
-    max-width: 500px;
-    width: clamp(300px, 90vw, 500px);
-    height: clamp(280px, 90vh, 400px);
-    padding: 0 10px;
+    max-width: 31.25rem;
+    width: clamp(18.75rem, 90vw, 31.25rem);
+    height: clamp(17.5rem, 90vh, 25rem);
+    padding: 0 0.625rem;
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@
     flex-direction: column;
     background-color: #FDF6E3;
     opacity: 0.85;
-    border-radius: 10px;
+    border-radius: 0.625rem;
 }
 
 .contactFormHeadline {
@@ -35,17 +35,17 @@
 
 .contactFormLogo {
     width: 100%;
-    height: clamp(300px, 90vh, 450px);
+    height: clamp(18.75rem, 90vh, 28.125rem);
     object-fit: cover;
 }
 
 .contactForm {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
     align-items: center;
     width: 90%;
-    max-width: 450px;
+    max-width: 28.125rem;
 }
 
 input, textarea {
@@ -54,14 +54,13 @@ input, textarea {
   background-color: #FDF6E3;
   opacity: 0.85;
   border: none;
-  border-bottom: 2px solid #338220;
-  /* border-radius: 4px 4px 0 0; */
+  border-bottom: 0.125rem solid #338220;
   outline: none;
   transition: border-color 0.3s ease;
 }
 
 textarea {
-    height: 50px;
+    height: 3.125rem;
 }
 
 input:hover,
