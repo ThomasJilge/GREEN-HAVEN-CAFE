@@ -10,13 +10,13 @@ import Footer from './components/footer.jsx'
 
 export default function App() {
   return (
-    <><Header />
-    <FirstSection />
-    <AboutUs />
-    <BookingForm />
-    <Menu />
-    <Location />
-    <ContactForm />
-    <Footer /></>
+      <><Header />
+      <FirstSection />
+      <AboutUs />
+      <BookingForm />
+      <Menu />
+      <Location />
+      <ContactForm />
+      <Footer /></>
   )
 }

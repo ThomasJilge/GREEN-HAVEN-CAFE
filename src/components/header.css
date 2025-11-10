@@ -26,6 +26,7 @@
   display: flex;
   gap: 3.125rem;
   justify-content: center;
+  font-weight: 600;
 }
 
 .navbarLink {
