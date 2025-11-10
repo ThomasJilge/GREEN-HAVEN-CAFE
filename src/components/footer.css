@@ -1,5 +1,6 @@
 .footer {
     height: 150px;
+    height: auto;
     background-color: #1F522B;
 }
 
@@ -44,4 +45,27 @@
     cursor: pointer;
     transform: scale(1.1);
     transition: transform 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+
+    .footerContainer {
+        flex-direction: column;
+        padding-bottom: 24px;
+    }
+
+    .copyRightContainer {
+        padding-bottom: 15px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .footerLogo {
+        width: 150px;
+        height: 100px;
+    }
+
 }
