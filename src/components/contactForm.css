@@ -12,8 +12,10 @@
 }
 
 .contactContainer {
-    width: 500px;
-    height: 400px;
+    max-width: 500px;
+    width: clamp(300px, 90vw, 500px);
+    height: clamp(280px, 90vh, 400px);
+    padding: 0 10px;
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -33,6 +35,8 @@
 
 .contactFormLogo {
     width: 100%;
+    height: clamp(300px, 90vh, 450px);
+    object-fit: cover;
 }
 
 .contactForm {
@@ -41,6 +45,7 @@
     gap: 20px;
     align-items: center;
     width: 90%;
+    max-width: 450px;
 }
 
 input, textarea {
