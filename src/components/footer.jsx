@@ -13,7 +13,9 @@ export default function Footer() {
             </a>
         <div className='copyRightContainer'>
             <p>© Thomas Jilge 2025</p>
-            <p className='icons8Container'>Icons by icons8</p>
+            <p className='icons8Container'>
+              Icons by{"\u00A0"} <a href="https://icons8.de" target="_blank" rel="noopener noreferrer">Icons8</a>
+            </p>
         </div>
         <div className='iconContainer'>
             <img className='footerIcon' src={instagramLogo} alt="" />

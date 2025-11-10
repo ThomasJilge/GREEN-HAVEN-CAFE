@@ -25,6 +25,10 @@
     justify-content: center;
 }
 
+.icons8Container a {
+    color: white;
+}
+
 .iconContainer {
     display: flex;
     gap: 20px;
