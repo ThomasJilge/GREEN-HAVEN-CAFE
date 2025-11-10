@@ -89,7 +89,7 @@ export default function AboutUs() {
           src={arrowLeftImage}
           alt="Previous"
           onClick={prevImage}
-          className="arrow"
+          className="arrow arrowLeft"
         />
 
         <div className="sliderImages">
@@ -127,7 +127,7 @@ export default function AboutUs() {
           src={arrowRightImage}
           alt="Next"
           onClick={nextImage}
-          className="arrow"
+          className="arrow arrowRight"
         />
       </div>
     </section>
