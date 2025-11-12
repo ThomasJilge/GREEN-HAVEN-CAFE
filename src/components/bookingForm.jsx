@@ -115,7 +115,7 @@ export default function BookingForm() {
       )}
       <section className='bookingFormContainer' id='bookingForm'>
         <div className="imageContainer">
-          <img className="bookingFormLogo" src={bookingFormImage} alt="" />
+          <img className="bookingFormLogo" src={bookingFormImage} alt="Booking form overlay on sunset view of Wat Arun temple in Bangkok, with seat selection and reservation fields" />
           <div className='bookingContainer'>
             <div className='bookingFormHeaderContainer'>
               <h3 className='bookingFormHeadline'>Book your visit</h3>

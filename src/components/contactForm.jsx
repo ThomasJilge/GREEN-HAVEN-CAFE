@@ -72,7 +72,7 @@ export default function ContactForm() {
       )}
       <section className='contactFormContainer' id='contactForm'>
         <div className="imageContainer">
-          <img className="contactFormLogo" src={contactFormImage} alt="" />
+          <img className="contactFormLogo" src={contactFormImage} alt="Contact form over nighttime cityscape of Bangkok with illuminated skyline" />
           <div className='contactContainer'>
             <h3 className='contactFormHeadline'>Contact Us</h3>
             <form className='contactForm' onSubmit={handleSubmit}>

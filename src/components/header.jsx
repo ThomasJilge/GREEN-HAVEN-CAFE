@@ -32,7 +32,7 @@ export default function Header() {
       <div className="headerContainer">
         <div className="headerLogoContainer">
           <a href="">
-            <img className="headerLogo" src={headerLogo} alt="Logo" />
+            <img className="headerLogo" src={headerLogo} alt="Green Haven Café logo with white coffee cup icon and bold text on dark green background" />
           </a>
         </div>
 

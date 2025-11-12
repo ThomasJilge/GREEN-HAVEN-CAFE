@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="footer">
         <div className='footerContainer'>
             <a href="#header">
-                <img className='footerLogo' src={footerLogo} alt="Logo" />
+                <img className='footerLogo' src={footerLogo} alt="Green Haven Café logo with coffee cup icon on dark green background" />
             </a>
         <div className='copyRightContainer'>
             <p>© Thomas Jilge 2025</p>
@@ -18,9 +18,9 @@ export default function Footer() {
             </p>
         </div>
         <div className='iconContainer'>
-            <img className='footerIcon' src={instagramLogo} alt="" />
-            <img className='footerIcon' src={facebookLogo} alt="" />
-            <img className='footerIcon' src={youtubeLogo} alt="" />
+            <img className='footerIcon' src={instagramLogo} alt="Follow Green Haven Café on Instagram" />
+            <img className='footerIcon' src={facebookLogo} alt="Visit Green Haven Café on Facebook" />
+            <img className='footerIcon' src={youtubeLogo} alt="Watch Green Haven Café videos on YouTube" />
         </div>
       </div>
     </footer>

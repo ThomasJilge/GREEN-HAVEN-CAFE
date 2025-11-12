@@ -8,7 +8,7 @@ export default function FirstSection() {
   return (
     <section className="firstSection">
       <div className="imageContainer">
-        <img className="firstSectionLogo" src={firstSectionLogo} alt="" />
+        <img className="firstSectionLogo" src={firstSectionLogo} alt="Cozy interior of Green Haven Café in Bangkok with natural light, plants, and welcoming branding" />
         <div className="textContent">
           <h1 className="textHeadline">
             <BlurText

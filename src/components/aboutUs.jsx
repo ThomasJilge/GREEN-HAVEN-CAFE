@@ -87,7 +87,7 @@ export default function AboutUs() {
       <div className="imageSliderContainer">
         <img
           src={arrowLeftImage}
-          alt="Previous"
+          alt="Arrow left"
           onClick={prevImage}
           className="arrow arrowLeft"
         />
@@ -125,7 +125,7 @@ export default function AboutUs() {
 
         <img
           src={arrowRightImage}
-          alt="Next"
+          alt="Arrow right"
           onClick={nextImage}
           className="arrow arrowRight"
         />

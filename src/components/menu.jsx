@@ -9,7 +9,7 @@ export default function Menu() {
                 <h2>Menu</h2>
             </div>
         <div className='imageMenuContainer'>
-            <img className='menuImage' src={menuImage} alt="" />
+            <img className='menuImage' src={menuImage} alt="Green Haven Café drinks menu with coffee and non-coffee options, prices for hot and cold, latte on wooden tray"/>
             <div className='menuTextContainer'>
                 <div className='menuOne'>
                     <div className='menuTextHeadlineOne'>
